@@ -20,7 +20,7 @@ $(document).ready(function() {
 			$('#strictLight').toggleClass('strictOn');
 		});
 
-		//Variables for and links to sounds
+		//Variables for and links to sounds - THESE DON'T WORK UNLESS THEY'RE CONVERTED TO URLS
 		audioTL = new Audio('../sounds/simonSound1.ogg');
 		audioTR = new Audio('../sounds/simonSound2.ogg');
 		audioBL = new Audio('../sounds/simonSound3.ogg');
