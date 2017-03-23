@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 //Variables for and links to sounds - THESE DON'T WORK UNLESS THEY'RE CONVERTED TO URLS
 //	audioTL = new Audio('../sounds/simonSound1.ogg');
-		audoTL = new Audio('https://static.charmedsatyr.com/simonSound1.ogg')
+		audioTL = new Audio('https://static.charmedsatyr.com/simonSound1.ogg')
 //	audioTR = new Audio('../sounds/simonSound2.ogg');
 		audioTR = new Audio('https://static.charmedsatyr.com/simonSound2.ogg');
 //	audioBL = new Audio('../sounds/simonSound3.ogg');
