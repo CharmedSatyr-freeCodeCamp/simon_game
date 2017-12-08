@@ -38,10 +38,10 @@ gulp.task('js', function() {
 
 // Inject processed css and js into index.pug, render the pug into index.html, & stream updates to the browser
 gulp.task('pug', function() {
-  var target = gulp.src('src/index.pug');
-  var sources = gulp.src(['styles/*.css', 'js/*.js']);
+  var target = gulp.src('src/index.pug', { read: true });
+  var sources = gulp.src(['styles/*.css', 'js/*.js'], { read: false });
   return target
-    .pipe(inject(sources))
+    .pipe(inject(sources, { addRootSlash: false }))
     .pipe(pug({ data: {} }))
     .pipe(concat('index.html'))
     .pipe(gulp.dest('./'))
