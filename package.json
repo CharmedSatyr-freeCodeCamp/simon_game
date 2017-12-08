@@ -6,7 +6,8 @@
   "author": "CharmedSatyr <z@charmed.tech>",
   "license": "GPL-3.0",
   "scripts": {
-    "gulp": "gulp serve"
+    "start": "gulp serve",
+    "clean": "rm -rf js styles index.html"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13",
@@ -19,7 +20,6 @@
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "jquery": "^3.2.1",
-    "prettier": "^1.9.1",
-    "pump": "^2.0.0"
+    "prettier": "^1.9.1"
   }
 }
