@@ -1,0 +1,64 @@
+.powerStrip {
+  @include hw(22px, 110px);
+  bottom: 0;
+  color: $white;
+  display: inline-flex;
+  font-family: $vt;
+  left: 33%;
+  position: absolute;
+  right: 0;
+  text-shadow: 1px 1px 1px $black;
+  top: 70%;
+  user-select: none;
+}
+
+.power {
+  @include hw(20px, 43px);
+  background: $darkest;
+  border: 2px solid $black;
+  border-radius: 5px;
+  box-shadow: inset 2px 3px 3px 0 $darkest;
+  text-align: justify;
+}
+
+.powerSlider {
+  @include hw(18px, 20px);
+  background: $lightgray;
+  background: linear-gradient(225deg, $lightgray, darken($lightgray, 25%));
+  border: 1px solid $black;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+
+  &.on {
+    float: left;
+  }
+}
+
+@media screen and (max-width: $maxW), screen and (max-height: $maxH) {
+  .powerStrip {
+    font-size: 90%;
+  }
+
+  .power {
+    @include hw(15px, 32.25px);
+  }
+
+  .powerSlider {
+    @include hw(13.5px, 15px);
+  }
+}
+
+@media screen and (min-width: $minW), screen and (min-height: $minH) {
+  .powerStrip {
+    font-size: 125%;
+  }
+
+  .power {
+    @include hw(25px, 53.75px);
+  }
+
+  .powerSlider {
+    @include hw(22.5px, 25px);
+  }
+}

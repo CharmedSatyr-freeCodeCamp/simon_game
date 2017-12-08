@@ -1,0 +1,27 @@
+.innerCircle {
+  @include hw(200px, 200px);
+  background: $dark;
+  background: linear-gradient(225deg, $dark, darken($dark, 15%));
+  border: 5px solid $darker;
+  border-radius: 100%;
+  bottom: 0;
+  box-shadow: -3px 3px 0 $darker, inset -4px 4px 10px $black, inset 1px -1px 5px $darker;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+@media screen and (max-width: $maxW), screen and (max-height: $maxH) {
+  .innerCircle {
+    @include hw(150px, 150px);
+  }
+}
+
+@media screen and (min-width: $minW), screen and (min-height: $minH) {
+  .innerCircle {
+    @include hw(250px, 250px);
+  }
+}

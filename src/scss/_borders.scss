@@ -1,0 +1,47 @@
+.horizontal-border {
+  @include hw(30px, 400px);
+  background: $darker;
+  background: linear-gradient(45deg, $darker, lighten($darker, 1%));
+  border: 3px solid $darker;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.vertical-border {
+  @include hw(400px, 30px);
+  background: $darker;
+  background: linear-gradient(45deg, $darker, lighten($darker, 1%));
+  border: 3px solid $darker;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+@media screen and (max-width: $maxW), screen and (max-height: $maxH) {
+  .horizontal-border {
+    @include hw(30px, 300px);
+  }
+
+  .vertical-border {
+    @include hw(300px, 30px);
+  }
+}
+
+@media screen and (min-width: $minW), screen and (min-height: $minH) {
+  .horizontal-border {
+    @include hw(30px, 500px);
+  }
+
+  .vertical-border {
+    @include hw(500px, 30px);
+  }
+}

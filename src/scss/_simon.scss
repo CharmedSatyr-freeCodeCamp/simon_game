@@ -1,0 +1,20 @@
+.simon {
+  color: $white;
+  font-family: $lobster;
+  font-size: 50px;
+  position: relative;
+  top: 7%;
+  text-shadow: 1px 1px 5px $black;
+}
+
+@media screen and (max-width: $maxW), screen and (max-height: $maxH) {
+  .simon {
+    font-size: 37.5px;
+  }
+}
+
+@media screen and (min-width: $minW), screen and (min-height: $minH) {
+  .simon {
+    font-size: 62.5px;
+  }
+}

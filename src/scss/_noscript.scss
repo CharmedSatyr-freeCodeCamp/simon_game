@@ -1,0 +1,18 @@
+/*NoScript*/
+#ns {
+  background: $yellow;
+  border-top: 2px solid $darker;
+  border-bottom: 2px solid $darker;
+  color: $darker;
+  font-size: 125%;
+  font-weight: 800;
+  font-family: sans-serif;
+  left: 0;
+  padding: 2px;
+  position: absolute;
+  text-align: center;
+  text-shadow: none;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}

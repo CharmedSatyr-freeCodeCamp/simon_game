@@ -1,0 +1,32 @@
+.display {
+  @include hw(45px, 60px);
+  background: $redmud;
+  border: 2px solid $black;
+  border-radius: 10px;
+  box-shadow: inset -2px 2px 3px 0 $mudshadow;
+  color: $brightmud;
+  display: block;
+  font-family: $vt;
+  font-size: 30px;
+  left: 5%;
+  line-height: 40px;
+  margin: auto;
+  position: absolute;
+  top: 38%;
+  z-index: 5;
+}
+
+@media screen and (max-width: $maxW), screen and (max-height: $maxH) {
+  .display {
+    @include hw(33.75px, 45px);
+    line-height: 30px;
+  }
+}
+
+@media screen and (min-width: $minW), screen and (min-height: $minH) {
+  .display {
+    @include hw(56.25px, 75px);
+    font-size: 37.25px;
+    line-height: 50px;
+  }
+}

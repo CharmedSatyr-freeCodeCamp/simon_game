@@ -1,0 +1,9 @@
+.lighting {
+  background: transparent;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4), lighten(rgba(255, 255, 255, 0.2), 15%));
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}

@@ -1,0 +1,51 @@
+/* Fonts */
+$vt: 'VT323', Monospace;
+$lobster: 'Lobster', cursive;
+
+/* Media query break points */
+//Max width & height
+$maxW: 480px;
+$maxH: 480px;
+
+//Min width & height
+$minW: 721px;
+$minH: 721px;
+
+/* Colors */
+//grayscale
+$black: #000000;
+$darkest: #0d0d0d;
+$darker: #202020;
+$dark: #3f3f3f;
+$gray: #808080;
+$lightgray: #a9a9a9;
+$white: #ffffff;
+
+//body
+$wood: #e9bb74;
+
+//tl
+$green: #00ff00;
+$limegreen: #32cd32;
+
+//tr
+$red: #ff0000;
+$pink: #ffc0cb;
+
+//bl
+$yellow: #ffff00;
+$orange: #ffa500;
+//$orange: #ffffff;
+
+//br
+$blue: #0000ff;
+$purple: #800080;
+
+//display
+$brightmud: #cc3300;
+$mudshadow: #330000;
+$redmud: #661a00;
+
+//start/strict
+$darkred: #8b0000;
+$darkyellow: #baba00;

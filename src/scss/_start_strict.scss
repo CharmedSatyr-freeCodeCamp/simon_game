@@ -1,0 +1,98 @@
+.start {
+  @include hw(15px, 15px);
+  background: $red;
+  background: linear-gradient(225deg, $red, darken($red, 15%));
+  border: 2px solid $gray;
+  border-radius: 100%;
+  bottom: 15%;
+  box-shadow: -3px 3px 5px $black;
+  color: $white;
+  cursor: pointer;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 7%;
+  z-index: 3;
+
+  &:active {
+    background: $darkred;
+  }
+
+  &.disabled {
+    pointer-events: none;
+  }
+}
+
+.strict {
+  @include hw(15px, 15px);
+  background: $yellow;
+  background: linear-gradient(225deg, $yellow, darken($yellow, 15%));
+  border: 2px solid $gray;
+  border-radius: 100%;
+  bottom: 15%;
+  box-shadow: -3px 3px 5px $black;
+  cursor: pointer;
+  left: 55%;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 7%;
+  z-index: 3;
+
+  &:active {
+    background: $darkyellow;
+  }
+}
+
+.strictLight {
+  @include hw(6px, 5px);
+  background: $darkred;
+  border: 1px solid $lightgray;
+  border-radius: 5px;
+  box-shadow: -2px 2px 3px 0 $mudshadow;
+  left: 82%;
+  position: absolute;
+  top: 37%;
+
+  &.on {
+    background: $red;
+  }
+
+}
+
+.label {
+  bottom: 0;
+  color: $white;
+  font-family: monospace;
+  left: -100%;
+  margin: 20%;
+  position: relative;
+  top: 110%;
+}
+
+@media screen and (max-width: $maxW), screen and (max-height: $maxH) {
+  .start,
+  .strict {
+    @include hw(11.25px, 11.25px);
+  }
+
+  .label {
+    font-size: 80%;
+  }
+}
+
+@media screen and (min-width: $minW), screen and (min-height: $minH) {
+  .start,
+  .strict {
+    @include hw (18.75px, 18.75px);
+  }
+
+  .strictLight {
+    @include hw(9px, 9px);
+  }
+
+  .label {
+    font-size: 125%;
+  }
+}

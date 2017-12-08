@@ -1,0 +1,25 @@
+.outerCircle {
+  @include hw(400px, 400px);
+  background: transparent;
+  border: 12px solid $darker;
+  border-radius: 100%;
+  bottom: 0;
+  box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.4);
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (max-width: $maxW), screen and (max-height: $maxH) {
+  .outerCircle {
+    @include hw(300px, 300px);
+  }
+}
+
+@media screen and (min-width: $minW), screen and (min-height: $minH) {
+  .outerCircle {
+    @include hw(500px, 500px);
+  }
+}
