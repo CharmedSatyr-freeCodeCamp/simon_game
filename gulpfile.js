@@ -5,7 +5,6 @@ var concat = require('gulp-concat');
 var gulp = require('gulp');
 var inject = require('gulp-inject');
 var pug = require('gulp-pug');
-var pump = require('pump');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 
@@ -37,8 +36,7 @@ gulp.task('js', function() {
     .pipe(browserSync.stream());
 });
 
-// Inject processed css and js into index.pug and render the pug into index.html
-// No need to stream this to the browser because browserSync is watching html
+// Inject processed css and js into index.pug, render the pug into index.html, & stream updates to the browser
 gulp.task('pug', function() {
   var target = gulp.src('src/index.pug');
   var sources = gulp.src(['styles/*.css', 'js/*.js']);
@@ -46,7 +44,8 @@ gulp.task('pug', function() {
     .pipe(inject(sources))
     .pipe(pug({ data: {} }))
     .pipe(concat('index.html'))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./'))
+    .pipe(browserSync.stream());
 });
 
 // Static server + watching scss/pug/html files
@@ -58,5 +57,6 @@ gulp.task('serve', ['scss', 'js', 'pug'], function() {
   });
   gulp.watch('src/scss/*.scss', ['scss']);
   gulp.watch('src/js/*.js', ['js']);
+  gulp.watch('src/*.pug', ['pug']);
   gulp.watch('*.html').on('change', browserSync.reload);
 });
