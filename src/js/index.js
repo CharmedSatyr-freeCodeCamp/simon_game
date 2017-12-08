@@ -26,15 +26,20 @@ $(document).ready(function() {
 
     //Variables for and links to sounds
     //var audioTL = new Audio('../sounds/simonSound1.ogg');
+    //var audioTL = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3')
     var audioTL = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3')
     //var audioTL = new Audio('https://static.charmedsatyr.com/sounds/simonSound1.ogg');
-    var audioTR = new Audio('../sounds/simonSound2.ogg');
+    //var audioTR = new Audio('../sounds/simonSound2.ogg');
+    var audioTR = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3')
     //var audioTR = new Audio('https://static.charmedsatyr.com/sounds/simonSound2.ogg');
-    var audioBL = new Audio('../sounds/simonSound3.ogg');
+    //var audioBL = new Audio('../sounds/simonSound3.ogg');
+    var audioBL = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3')
     //var audioBL = new Audio('https://static.charmedsatyr.com/sounds/simonSound3.ogg');
-    var audioBR = new Audio('../sounds/simonSound4.ogg');
+    //var audioBR = new Audio('../sounds/simonSound4.ogg');
+    var audioBR = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
     //var audioBR = new Audio('https://static.charmedsatyr.com/sounds/simonSound4.ogg');
-    var buzzer = new Audio('../sounds/Buzzer.ogg');
+    //var buzzer = new Audio('../sounds/Buzzer.ogg');
+    var buzzer = new Audio('https://charmedsatyr.github.io/simon_game/sounds/Buzzer.ogg')
     //var buzzer = new Audio('https://static.charmedsatyr.com/sounds/Buzzer.ogg');
 
     //Standard highlight/sound function that takes specific quarter variables
