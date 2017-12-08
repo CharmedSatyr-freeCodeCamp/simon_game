@@ -25,8 +25,8 @@ $(document).ready(function() {
     });
 
     //Variables for and links to sounds
-    var audioTL = new Audio('../sounds/simonSound1.ogg');
-    //var audioTL = new Audio('https://static.charmedsatyr.com/sounds/simonSound1.ogg');
+    //var audioTL = new Audio('../sounds/simonSound1.ogg');
+    var audioTL = new Audio('https://static.charmedsatyr.com/sounds/simonSound1.ogg');
     var audioTR = new Audio('../sounds/simonSound2.ogg');
     //var audioTR = new Audio('https://static.charmedsatyr.com/sounds/simonSound2.ogg');
     var audioBL = new Audio('../sounds/simonSound3.ogg');
