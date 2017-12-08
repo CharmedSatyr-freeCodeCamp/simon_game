@@ -4,8 +4,8 @@
 $(document).ready(function() {
   //Power button toggles slider and all functionality
   $('#power').click(function() {
-    $('#powerSlider').toggleClass('powerSliderOn');
-    if ($('#powerSlider').hasClass('powerSliderOn')) {
+    $('#powerSlider').toggleClass('on');
+    if ($('#powerSlider').hasClass('on')) {
       $('#display')
         .text('--')
         .fadeToggle(500)
@@ -14,20 +14,17 @@ $(document).ready(function() {
         .fadeToggle(500);
     } else {
       $('#display').text('');
-      $('#strictLight').removeClass('strictOn');
-      $('#start').removeClass('start-disabled');
+      $('#strictLight').removeClass('on');
+      $('#start').removeClass('disabled');
       location.reload(false); //This reloads the page from the cache (keeps anything from carrying over between games)
     }
 
-    //Variables
-    var audio, cpuArr, display, highlight, moveCount, randNum, theQ, playerArr, victory;
-
     //Toggles the strict light when pressed
     $('#strict').click(function() {
-      $('#strictLight').toggleClass('strictOn');
+      $('#strictLight').toggleClass('on');
     });
 
-    //Variables for and links to sounds - THESE DON'T WORK UNLESS THEY'RE CONVERTED TO URLS
+    //Variables for and links to sounds
     var audioTL = new Audio('../sounds/simonSound1.ogg');
     //var audioTL = new Audio('https://static.charmedsatyr.com/sounds/simonSound1.ogg');
     var audioTR = new Audio('../sounds/simonSound2.ogg');
@@ -40,11 +37,12 @@ $(document).ready(function() {
     //var buzzer = new Audio('https://static.charmedsatyr.com/sounds/Buzzer.ogg');
 
     //Standard highlight/sound function that takes specific quarter variables
+    var theQ, audio;
     function fx() {
-      $(theQ).addClass(highlight);
+      $(theQ).addClass('pressed');
       audio.play();
       setTimeout(function() {
-        $(theQ).removeClass(highlight);
+        $(theQ).removeClass('pressed');
       }, 300);
     }
 
@@ -52,11 +50,10 @@ $(document).ready(function() {
     function tl() {
       audio = audioTL;
       theQ = '#tl';
-      highlight = 'pressedTL';
       fx();
     }
     $('#tl').click(function() {
-      if ($('#powerSlider').hasClass('powerSliderOn')) {
+      if ($('#powerSlider').hasClass('on')) {
         tl();
       }
     });
@@ -65,11 +62,10 @@ $(document).ready(function() {
     function tr() {
       audio = audioTR;
       theQ = '#tr';
-      highlight = 'pressedTR';
       fx();
     }
     $('#tr').click(function() {
-      if ($('#powerSlider').hasClass('powerSliderOn')) {
+      if ($('#powerSlider').hasClass('on')) {
         tr();
       }
     });
@@ -78,11 +74,10 @@ $(document).ready(function() {
     function bl() {
       audio = audioBL;
       theQ = '#bl';
-      highlight = 'pressedBL';
       fx();
     }
     $('#bl').click(function() {
-      if ($('#powerSlider').hasClass('powerSliderOn')) {
+      if ($('#powerSlider').hasClass('on')) {
         bl();
       }
     });
@@ -91,20 +86,20 @@ $(document).ready(function() {
     function br() {
       audio = audioBR;
       theQ = '#br';
-      highlight = 'pressedBR';
       fx();
     }
     $('#br').click(function() {
-      if ($('#powerSlider').hasClass('powerSliderOn')) {
+      if ($('#powerSlider').hasClass('on')) {
         br();
       }
     });
 
     //Common function bank
+    var cpuArr, display, moveCount, playerArr, randNum;
     //Start sequence
     function start() {
-      if ($('#powerSlider').hasClass('powerSliderOn')) {
-        $('#start').addClass('start-disabled');
+      if ($('#powerSlider').hasClass('on')) {
+        $('#start').addClass('disabled');
         cpuArr = [];
         playerArr = [];
         randNum = rando(0, 3);
@@ -152,13 +147,13 @@ $(document).ready(function() {
 
     //Start the game
     $('#start').click(function() {
-      if ($('#powerSlider').hasClass('powerSliderOn')) {
+      if ($('#powerSlider').hasClass('on')) {
         setTimeout(start, 1000);
       }
       /* Play the Game */
       function match() {
         //Victory sequence - upon completing 20 turns
-        if (moveCount > 19 && $('#powerSlider').hasClass('powerSliderOn')) {
+        if (moveCount > 19 && $('#powerSlider').hasClass('on')) {
           setTimeout(function() {
             display = 'WIN';
             $('#display')
@@ -175,7 +170,7 @@ $(document).ready(function() {
               .fadeToggle(500)
               .fadeToggle(500)
               .fadeToggle(500);
-            victory = [2, 3, 1, 0, 1, 0, 2, 3, 1, 3, 2, 3, 2, 3, 1, 0, 1, 0, 2, 3, 1, 3, 2];
+            var victory = [2, 3, 1, 0, 1, 0, 2, 3, 1, 3, 2, 3, 2, 3, 1, 0, 1, 0, 2, 3, 1, 3, 2];
             repeat(victory, 0, 300);
             setTimeout(function() {
               $('#display')
@@ -192,7 +187,7 @@ $(document).ready(function() {
         } else if (
           playerArr.length !== 0 &&
           playerArr.length === cpuArr.length &&
-          $('#powerSlider').hasClass('powerSliderOn')
+          $('#powerSlider').hasClass('on')
         ) {
           setTimeout(function() {
             playerArr = [];
@@ -209,12 +204,12 @@ $(document).ready(function() {
       }
       //Fail sequence with strict option
       function fail() {
-        if ($('#powerSlider').hasClass('powerSliderOn')) {
+        if ($('#powerSlider').hasClass('on')) {
           buzzer.play();
           moveCount = 0;
           playerArr = [];
           setTimeout(function() {
-            if ($('#strictLight').hasClass('strictOn')) {
+            if ($('#strictLight').hasClass('on')) {
               $('#display')
                 .text('--')
                 .fadeToggle(500)
@@ -230,7 +225,7 @@ $(document).ready(function() {
       }
       //Mechanics for quarter clicks during gameplay
       $('#tl').click(function() {
-        if ($('#powerSlider').hasClass('powerSliderOn')) {
+        if ($('#powerSlider').hasClass('on')) {
           playerArr.push(0);
           moveCount++;
           if (0 === cpuArr[moveCount - 1]) {
@@ -242,7 +237,7 @@ $(document).ready(function() {
       });
 
       $('#tr').click(function() {
-        if ($('#powerSlider').hasClass('powerSliderOn')) {
+        if ($('#powerSlider').hasClass('on')) {
           playerArr.push(1);
           moveCount++;
           if (1 === cpuArr[moveCount - 1]) {
@@ -254,7 +249,7 @@ $(document).ready(function() {
       });
 
       $('#bl').click(function() {
-        if ($('#powerSlider').hasClass('powerSliderOn')) {
+        if ($('#powerSlider').hasClass('on')) {
           playerArr.push(2);
           moveCount++;
           if (2 === cpuArr[moveCount - 1]) {
@@ -266,7 +261,7 @@ $(document).ready(function() {
       });
 
       $('#br').click(function() {
-        if ($('#powerSlider').hasClass('powerSliderOn')) {
+        if ($('#powerSlider').hasClass('on')) {
           playerArr.push(3);
           moveCount++;
           if (3 === cpuArr[moveCount - 1]) {
