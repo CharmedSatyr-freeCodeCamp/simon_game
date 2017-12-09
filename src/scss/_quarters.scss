@@ -7,6 +7,11 @@
   margin: auto;
   right: 0;
   top: 0;
+
+  &.disabled {
+    pointer-events: none;
+  }
+
 }
 
 .tl {

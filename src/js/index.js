@@ -25,19 +25,19 @@ $(document).ready(function() {
     });
 
     //Variables for and links to sounds - Must be URLs for some reason.
-    var audioTL = new Audio('https://charmedsatyr.github.io/simon_game/sounds/simonSound1.ogg')
+    var audioTL = new Audio('https://charmedsatyr.github.io/simon_game/sounds/simonSound1.ogg');
     //var audioTL = new Audio('../sounds/simonSound1.ogg');
     //var audioTL = new Audio('https://static.charmedsatyr.com/sounds/simonSound1.ogg');
-    var audioTR = new Audio('https://charmedsatyr.github.io/simon_game/sounds/simonSound2.ogg')
+    var audioTR = new Audio('https://charmedsatyr.github.io/simon_game/sounds/simonSound2.ogg');
     //var audioTR = new Audio('../sounds/simonSound2.ogg');
     //var audioTR = new Audio('https://static.charmedsatyr.com/sounds/simonSound2.ogg');
-    var audioBL = new Audio('https://charmedsatyr.github.io/simon_game/sounds/simonSound3.ogg')
+    var audioBL = new Audio('https://charmedsatyr.github.io/simon_game/sounds/simonSound3.ogg');
     //var audioBL = new Audio('../sounds/simonSound3.ogg');
     //var audioBL = new Audio('https://static.charmedsatyr.com/sounds/simonSound3.ogg');
-    var audioBR = new Audio('https://charmedsatyr.github.io/simon_game/sounds/simonSound4.ogg')
+    var audioBR = new Audio('https://charmedsatyr.github.io/simon_game/sounds/simonSound4.ogg');
     //var audioBR = new Audio('../sounds/simonSound4.ogg');
     //var audioBR = new Audio('https://static.charmedsatyr.com/sounds/simonSound4.ogg');
-    var buzzer = new Audio('https://charmedsatyr.github.io/simon_game/sounds/Buzzer.ogg')
+    var buzzer = new Audio('https://charmedsatyr.github.io/simon_game/sounds/Buzzer.ogg');
     //var buzzer = new Audio('../sounds/Buzzer.ogg');
     //var buzzer = new Audio('https://static.charmedsatyr.com/sounds/Buzzer.ogg');
 
@@ -139,13 +139,23 @@ $(document).ready(function() {
           break;
       }
     }
-    //"Play" an array in sequence. Requires array, starting index, speed of playback. If it weren't recursive, setTimeout (not blocking) wouldn't work properly
+    //"Play" an array in sequence. Requires array, starting index, speed of
+    //playback. If it weren't recursive, setTimeout (not blocking) wouldn't
+    //work properly.
     function repeat(arr, index, speed) {
       setTimeout(function() {
         lightsCameraAction(arr[index]);
         index++;
         if (index < arr.length) {
           repeat(arr, index, speed);
+        }
+        //Quarters are disabled during the match function when it's the
+        //computer's turn. Once the computer has finished playing, wait a short
+        //time and restore the ability to click on quarters. Prevents confusion.
+        if (index === arr.length) {
+          setTimeout(function() {
+            $('.quarter').removeClass('disabled');
+          }, 500);
         }
       }, speed);
     }
@@ -194,6 +204,9 @@ $(document).ready(function() {
           playerArr.length === cpuArr.length &&
           $('#powerSlider').hasClass('on')
         ) {
+          //Quarters are disabled during the match function when it's the
+          //computer's turn. The 'disabled' class is removed by the repeat() fn
+          $('.quarter').addClass('disabled');
           setTimeout(function() {
             playerArr = [];
             moveCount = 0;
