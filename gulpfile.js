@@ -48,7 +48,7 @@ gulp.task('pug', function() {
     .pipe(browserSync.stream());
 });
 
-// Static server + watching scss/pug/html files
+// Static server + watching scss/js/pug/html files
 gulp.task('serve', ['scss', 'js', 'pug'], function() {
   browserSync.init({
     server: {
