@@ -13,8 +13,10 @@
   }
 }
 
-@media screen and (min-width: $minW), screen and (min-height: $minH) {
-  .simon {
-    font-size: 62.5px;
+@media screen and (min-width: $w) {
+  @media screen and (min-width: $minW), screen and (min-height: $minH) {
+    .simon {
+      font-size: 62.5px;
+    }
   }
 }

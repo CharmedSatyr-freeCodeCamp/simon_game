@@ -19,9 +19,11 @@
     @include hw(150px, 150px);
   }
 }
+@media screen and (min-width: $w) {
 
-@media screen and (min-width: $minW), screen and (min-height: $minH) {
-  .innerCircle {
-    @include hw(250px, 250px);
+  @media screen and (min-width: $minW), screen and (min-height: $minH) {
+    .innerCircle {
+      @include hw(250px, 250px);
+    }
   }
 }

@@ -49,16 +49,18 @@
   }
 }
 
-@media screen and (min-width: $minW), screen and (min-height: $minH) {
-  .powerStrip {
-    font-size: 125%;
-  }
+@media screen and (min-width: $w) {
+  @media screen and (min-width: $minW), screen and (min-height: $minH) {
+    .powerStrip {
+      font-size: 125%;
+    }
 
-  .power {
-    @include hw(25px, 53.75px);
-  }
+    .power {
+      @include hw(25px, 53.75px);
+    }
 
-  .powerSlider {
-    @include hw(22.5px, 25px);
+    .powerSlider {
+      @include hw(22.5px, 25px);
+    }
   }
 }

@@ -36,12 +36,14 @@
   }
 }
 
-@media screen and (min-width: $minW), screen and (min-height: $minH) {
-  .horizontal-border {
-    @include hw(30px, 500px);
-  }
+@media screen and (min-width: $w) {
+  @media screen and (min-width: $minW), screen and (min-height: $minH) {
+    .horizontal-border {
+      @include hw(30px, 500px);
+    }
 
-  .vertical-border {
-    @include hw(500px, 30px);
+    .vertical-border {
+      @include hw(500px, 30px);
+    }
   }
 }

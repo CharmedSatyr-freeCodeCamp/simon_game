@@ -18,8 +18,10 @@
   }
 }
 
-@media screen and (min-width: $minW), screen and (min-height: $minH) {
-  .outerCircle {
-    @include hw(500px, 500px);
+@media screen and (min-width: $w) {
+  @media screen and (min-width: $minW), screen and (min-height: $minH) {
+    .outerCircle {
+      @include hw(500px, 500px);
+    }
   }
 }

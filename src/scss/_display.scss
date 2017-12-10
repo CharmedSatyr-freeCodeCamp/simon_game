@@ -23,10 +23,12 @@
   }
 }
 
-@media screen and (min-width: $minW), screen and (min-height: $minH) {
-  .display {
-    @include hw(56.25px, 75px);
-    font-size: 37.25px;
-    line-height: 50px;
+@media screen and (min-width: $w) {
+  @media screen and (min-width: $minW), screen and (min-height: $minH) {
+    .display {
+      @include hw(56.25px, 75px);
+      font-size: 37.25px;
+      line-height: 50px;
+    }
   }
 }

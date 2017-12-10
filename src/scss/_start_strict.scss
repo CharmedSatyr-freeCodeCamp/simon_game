@@ -82,17 +82,19 @@
   }
 }
 
-@media screen and (min-width: $minW), screen and (min-height: $minH) {
-  .start,
-  .strict {
-    @include hw (18.75px, 18.75px);
-  }
+@media screen and (min-width: $w) {
+  @media screen and (min-width: $minW), screen and (min-height: $minH) {
+    .start,
+    .strict {
+      @include hw (18.75px, 18.75px);
+    }
 
-  .strictLight {
-    @include hw(9px, 9px);
-  }
+    .strictLight {
+      @include hw(9px, 9px);
+    }
 
-  .label {
-    font-size: 125%;
+    .label {
+      font-size: 125%;
+    }
   }
 }
