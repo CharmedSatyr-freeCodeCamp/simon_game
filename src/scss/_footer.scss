@@ -1,11 +1,11 @@
 .footer {
-  bottom: 10px;
+  bottom: 5px;
   color: $white;
   font-family: monospace;
   font-size: 16px;
-  text-shadow: 0 0 1px $black;
   position: absolute;
   text-align: center;
+  text-shadow: 0 0 1px $black;
   width: 100vw;
 
   a {
@@ -14,7 +14,7 @@
   }
 }
 
-@media screen and (max-width: $maxW), screen and (max-height: $maxH) {
+@media screen and (max-height: 620px) {
   .footer {
     display: none;
   }
