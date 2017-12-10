@@ -13,3 +13,9 @@
     text-decoration: none;
   }
 }
+
+@media screen and (max-width: $maxW), screen and (max-height: $maxH) {
+  .footer {
+    display: none;
+  }
+}
