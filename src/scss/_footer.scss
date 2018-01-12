@@ -1,21 +1,51 @@
-.footer {
-  bottom: 5px;
-  color: $white;
-  font-family: monospace;
-  font-size: 16px;
+@import url('https://fonts.googleapis.com/css?family=Reenie+Beanie');
+
+footer {
+  align-items: flex-end;
+  bottom: 3vh;
+  display: flex;
+  height: 100vh;
+  justify-content: flex-end;
   position: absolute;
-  text-align: center;
-  text-shadow: 0 0 1px $black;
   width: 100vw;
-
-  a {
-    color: $white;
-    text-decoration: none;
+  z-index: 10;
+  @media screen and (max-width: 700px) {
+    bottom: 2vh;
   }
-}
 
-@media screen and (max-height: 620px) {
-  .footer {
-    display: none;
+  .stickyNote {
+    background: $stickynote;
+    box-shadow: -3px 3px 5px $dark;
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 24px;
+    height: 200px;
+    margin-right: 8vw;
+    padding: 10px;
+    transform: rotate(6deg);
+    transition: 0.15s linear;
+    width: 200px;
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+    @media screen and (max-width: 800px) {
+      font-size: 14px;
+      height: 125px;
+      width: 125px;
+      margin-right: 4vw;
+    }
+    @media screen and (min-width: 801px) and (max-width: 1080px) {
+      font-size: 16px;
+      height: 150px;
+      width: 150px;
+      margin-right: 5vw;
+    }
+    &:hover {
+      box-shadow: 0 0 3px $darker;
+      font-size: 36px;
+      height: 350px;
+      transform: rotate(2deg);
+      width: 350px;
+    }
   }
 }

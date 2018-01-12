@@ -9,7 +9,7 @@ html
     body
         noscript
             div#ns Please enable Javascript. This site will not function properly without it.
-        div.lighting
+        main.lighting
             div.outerCircle
                 div#tl.quarter.tl
                 div#tr.quarter.tr
@@ -32,10 +32,11 @@ html
             div.vertical-border
             div.horizontal-border
         footer
-            div.footer
-              a(href='https://www.github.com/CharmedSatyr/simon_game' target='_blank') Designed and coded by CharmedSatyr
-              span &nbsp;|&nbsp;
-              a(href='https://github.com/CharmedSatyr/simon_game/blob/master/LICENSE' target='_blank') Licensed under GPL-3.0
+            div.stickyNote
+              p
+                a(href='https://github.com/CharmedSatyr/simon_game' rel='nofollow' target='_blank') Designed and coded by CharmedSatyr
+              p
+                a(href='https://github.com/CharmedSatyr/simon_game/blob/master/LICENSE' rel='nofollow' target='_blank') GNU Public License v3.0
         //- inject:js
         //- {{name}}.{{ext}}
         //- endinject
