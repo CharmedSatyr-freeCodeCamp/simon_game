@@ -4,4 +4,9 @@ body {
   overflow: hidden;
   text-align: center;
   user-select: none;
+
+  transition: transform 0.5s linear;
+  @media screen and (max-width: 330px) {
+    transform: translateX(1000%);
+  }
 }
