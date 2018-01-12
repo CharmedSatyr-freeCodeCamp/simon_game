@@ -40,7 +40,8 @@ footer {
       width: 150px;
       margin-right: 5vw;
     }
-    &:hover {
+    &:hover,
+    &:focus {
       box-shadow: 0 0 3px $darker;
       font-size: 44px;
       height: 350px;
