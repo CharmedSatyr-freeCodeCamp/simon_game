@@ -1,32 +1,37 @@
 footer {
-  align-items: flex-end;
-  bottom: 3vh;
-  display: flex;
-  height: 100vh;
-  justify-content: flex-end;
-  position: absolute;
-  width: 100vw;
-  z-index: 10;
-  @media screen and (max-width: 700px) {
-    bottom: 2vh;
-  }
-  @media screen and (max-height: 520px) {
-    display: none;
-  }
   .stickyNote {
     background: $stickynote;
+    bottom: 3vh;
     box-shadow: -3px 3px 5px $dark;
     font-family: $rb;
     font-size: 24px;
     height: 200px;
     margin-right: 8vw;
+    right: 0;
     padding: 10px;
+    position: absolute;
     transform: rotate(6deg);
     transition: 0.15s linear;
     width: 200px;
+    z-index: 3;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 3px $darker;
+      font-size: 44px;
+      height: 350px;
+      transform: rotate(2deg);
+      width: 350px;
+    }
     a {
       color: #000;
       text-decoration: none;
+    }
+    @media screen and (max-height: 520px) {
+      display: none;
+    }
+    @media screen and (max-width: 700px) {
+      bottom: 2vh;
     }
     @media screen and (max-width: 800px) {
       font-size: 14px;
@@ -39,14 +44,6 @@ footer {
       height: 150px;
       width: 150px;
       margin-right: 5vw;
-    }
-    &:hover,
-    &:focus {
-      box-shadow: 0 0 3px $darker;
-      font-size: 44px;
-      height: 350px;
-      transform: rotate(2deg);
-      width: 350px;
     }
   }
 }
