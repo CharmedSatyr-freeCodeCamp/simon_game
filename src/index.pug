@@ -1,46 +1,58 @@
 doctype html
 html
-    head
-        meta(charset='utf-8', name='viewport', content='width=device-width, initial-scale=1')
-        title Simon Game
-        //- inject:css
-        //- {{name}}:{{ext}}
-        //- endinject
-    body
-        noscript
-            div#ns Please enable Javascript. This site will not function properly without it.
-        main.lighting
-            div.outerCircle
-                div#tl.quarter.tl
-                div#tr.quarter.tr
-                div#bl.quarter.bl
-                div#br.quarter.br
-            div.innerCircle
-                div.simon Simon
-                div#start.start
-                    span.label Start
-                div#strict.strict
-                    span.label Strict
-                div#strictLight.strictLight
-                div.display
-                    span#display
-                div.powerStrip
-                    span ON
-                    div#power.power
-                        div#powerSlider.powerSlider
-                    span OFF
-            div.vertical-border
-            div.horizontal-border
-        footer
-            div.stickyNote
-              p
-                a(href='https://github.com/CharmedSatyr/simon_game' rel='nofollow' target='_blank') Designed and coded by
-                  br
-                  span CharmedSatyr
-              p
-                a(href='https://github.com/CharmedSatyr/simon_game/blob/master/LICENSE' rel='nofollow' target='_blank') GNU General
-                  br
-                  span Public License v3.0
-        //- inject:js
-        //- {{name}}.{{ext}}
-        //- endinject
+  head
+    meta(charset="UTF-8")
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    //- Title
+    title Simon Game
+    //- Metadata
+    meta(name="author" content="CharmedSatyr")
+    meta(name="description" content="My take on Milton Bradley's classic 1978 memory game, made with jQuery and SCSS. Looking to hire a full stack JavaScript developer full time or for your next website? Check out Charmed.Tech and get in touch today!")
+    meta(name="keywords" content="full stack developer, javascript, react, web developer, fullstack, simon, game")
+    //- Prefetch sounds to avoid delay on game start
+    link(rel='prefetch' href='https://charmedsatyr.github.io/simon_game/sounds/simonSound1.ogg')
+    link(rel='prefetch' href='https://charmedsatyr.github.io/simon_game/sounds/simonSound2.ogg')
+    link(rel='prefetch' href='https://charmedsatyr.github.io/simon_game/sounds/simonSound3.ogg')
+    link(rel='prefetch' href='https://charmedsatyr.github.io/simon_game/sounds/simonSound4.ogg')
+    link(rel='prefetch' href='https://charmedsatyr.github.io/simon_game/sounds/Buzzer.ogg')
+    //- inject:css
+    //- {{name}}:{{ext}}
+    //- endinject
+  body
+    noscript
+      div#ns Please enable Javascript. This site will not function properly without it.
+    main.lighting
+      div.outerCircle
+        div#tl.quarter.tl
+        div#tr.quarter.tr
+        div#bl.quarter.bl
+        div#br.quarter.br
+      div.innerCircle
+        div.simon Simon
+        div#start.start
+          span.label Start
+        div#strict.strict
+          span.label Strict
+        div#strictLight.strictLight
+        div.display
+          span#display
+        div.powerStrip
+          span ON
+          div#power.power
+            div#powerSlider.powerSlider
+          span OFF
+      div.vertical-border
+      div.horizontal-border
+    footer
+      div.stickyNote
+        p
+          a(href='https://github.com/CharmedSatyr/simon_game' rel='nofollow' target='_blank') Designed and coded by
+            br
+            span CharmedSatyr
+        p
+          a(href='https://github.com/CharmedSatyr/simon_game/blob/master/LICENSE' rel='nofollow' target='_blank') GNU General
+            br
+            span Public License v3.0
+    //- inject:js
+    //- {{name}}.{{ext}}
+    //- endinject
