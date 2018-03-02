@@ -2,6 +2,11 @@
 
 //Document ready
 $(document).ready(function() {
+  // Console welcome
+  console.log(
+    'Thanks for visiting my site! Check out my portfolio at https://charmed.tech and get in touch!'
+  );
+
   //Power button toggles slider and all functionality
   $('#power').click(function() {
     $('#powerSlider').toggleClass('on');
