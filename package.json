@@ -2,7 +2,7 @@
   "name": "simon_game",
   "version": "0.0.1",
   "main": "index.js",
-  "repository": "https://github.com/charmedsatyr/simon_game",
+  "repository": "https://github.com/charmedsatyr-freecodecamp/simon_game",
   "author": "CharmedSatyr <z@charmed.tech>",
   "license": "GPL-3.0",
   "scripts": {
