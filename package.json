@@ -19,7 +19,7 @@
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
-    "jquery": "^3.4.0",
+    "jquery": "^3.5.0",
     "prettier": "^1.9.1"
   }
 }
